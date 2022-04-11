@@ -1,5 +1,5 @@
 package com.company;
-class Node1{
+class  Node1{
     int key;
     Node1 left, right;
     public Node1(int item)
@@ -10,12 +10,8 @@ class Node1{
 }
 public class BinarySearchTree
 {
-    Node1 root;
-    void insert(int key)
-    {
-        root = insertRec(root, key);
-    }
-    Node1 insertRec(Node1 root,int key)
+   static Node1 root;
+    static Node1 insertRec(Node1 root,int key)
     {
         if(root==null)
         {
@@ -33,6 +29,10 @@ public class BinarySearchTree
 
     }
 
+    static void insert(int key)
+    {
+        root = insertRec(root, key);
+    }
      boolean Binarysearch(Node1 root, int key )
     {
         if(root==null ) {
@@ -45,11 +45,13 @@ public class BinarySearchTree
         }
         if(root.key<key)
         {
-            return               Binarysearch(root.right,key);
-        }else {
-
-      return    Binarysearch(root.left,key);
-    }}
+            return Binarysearch(root.right,key);
+        }
+        else
+        {
+            return Binarysearch(root.left,key);
+        }
+    }
     public void inOrder(Node1 root){
         if(root==null){
             return;
@@ -60,22 +62,22 @@ public class BinarySearchTree
     }
     public static void main(String[] args) {
         BinarySearchTree obj=new BinarySearchTree();
-       obj.root.right.right.right=new Node1(17);
-        obj.insert(8);
-        obj.insert(4);
-        obj.insert(12);
-        obj.insert(2);
-        obj.insert(6);
-        obj.insert(10);
-        obj.insert(15);
-        obj.insert(1);
-        obj.insert(3);
-        obj.insert(5);
-        obj.insert(7);
-        obj.insert(13);
-        obj.insert(17);
-obj.inOrder(obj.root);
-        System.out.println( obj.Binarysearch(obj.root, 4));
+
+        insert(8);
+        insert(4);
+        insert(12);
+        insert(2);
+        insert(6);
+        insert(10);
+        insert(15);
+        insert(1);
+        insert(3);
+        insert(5);
+        insert(7);
+        insert(13);
+        insert(17);
+        obj.inOrder(root);
+        System.out.println( obj.Binarysearch(root, 4));
 
     }
 }
