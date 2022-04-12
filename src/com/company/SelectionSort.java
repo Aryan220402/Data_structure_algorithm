@@ -5,7 +5,7 @@ public class SelectionSort
     Scanner sc=new Scanner(System.in);
     void sort()
     {
-        System.out.println("Enter the SIze of Array");
+        System.out.println("Enter the SIze of Array" );
         int n=sc.nextInt();
         int a[]=new int[n];
         System.out.println("Enter the element in Array");
